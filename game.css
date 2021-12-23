@@ -51,9 +51,9 @@ text-align: center;
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .choice-container{
-        min-width: 640px;
+        min-width: 540px;
     }
 }
     
