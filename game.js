@@ -10,18 +10,22 @@
 //THEN I can save my initials and my score
 var question = document.querySelector("#question");
 
-var choices = Array.from(document.querySelectorAll(".choice-text"));
+//var choices = Array.from(document.querySelectorAll(".choice-text"));
 
 var progressText = document.querySelector("#progressText");
 
 var scoreText = document.querySelector("#score");
 
-let currentQuestion ={};
+ var startBtn=document.querySelector("#start")
 let acceptingAnswers = true;
 let score = 0
 let questionCounter=0
 let availableQuestions= {}
-var choice1=
+var choice1= document.querySelector("#answerA")
+var choice2= document.querySelector("#answerB")
+var choice3= document.querySelector("#answerC")
+var choice4= document.querySelector("#answerD")
+
 let questions=[
     {
 
@@ -55,6 +59,7 @@ let questions=[
 //WHEN I click the start button
 //THEN a timer starts and I am presented with a question
 startQuiz= function() {
+    //location.href="/game.html"
     startTimer()
     questionCounter = 0
     score = 0
@@ -63,7 +68,7 @@ startQuiz= function() {
 
 }
 startTimer= function() {
-    let seconds = 6;
+    let seconds = 60;
     timerInterval = setInterval(function(){
         document.getElementById("quiz-timer").innerHTML="00:"+seconds;
         seconds--;
@@ -77,12 +82,29 @@ startTimer= function() {
 getNewQuestion= function() {
 
 let questionPrompt =document.getElementById("question"); 
+var questionIndex =questions[Math.floor(Math.random() * 5 )]
+var option1 =  questionIndex.choices[0]
+var option2 =  questionIndex.choices[1]
+var option3 =  questionIndex.choices[2]
+var option4 =  questionIndex.choices[3]
+questionPrompt.innerHTML= questionIndex.question;
+choice1.innerHTML=option1;
+choice2.innerHTML=option2;
+choice3.innerHTML=option3;
+choice4.innerHTML=option4;
 
-questionPrompt.innerHTML= questions[0].question;
-choice1.innerHTML=choices[0].question;
-console.log("getting questions")
-//if
 
-
+choice1.setAttribute("data-value",option1)
+choice2.setAttribute("data-value",option2)
+choice3.setAttribute("data-value",option3)
+choice4.setAttribute("data-value",option4)
+choice1.addEventListener("click",answerEval()
 }
-startQuiz()
+function answerEval() {
+if (userchoice === answer )
+}
+
+
+
+    startQuiz()
+
