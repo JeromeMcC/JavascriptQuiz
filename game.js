@@ -112,7 +112,8 @@ function answerEval(userchoice,answer) {
     if (userchoice === answer){
         //addtime and turn green
         seconds+=15 
-        document.querySelector(".choice-container").classList.add("correct");}
+        document.querySelector(".choice-container").classList.add("correct");
+        console.log("correct")}
      else{ 
         seconds-=15
         document.querySelector(".choice-container").classList.add("incorrect");}
